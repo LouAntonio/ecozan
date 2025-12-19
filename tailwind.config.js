@@ -56,6 +56,12 @@ module.exports = {
 					error: '#E74C3C',
 					info: '#00A3E0',
 				},
+				// Cores de borda
+				border: {
+					default: '#333333',
+					light: '#444444',
+					focus: '#6BAF4A',
+				},
 			},
 			fontFamily: {
 				sans: ['System'],
