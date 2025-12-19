@@ -7,8 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Cores primárias - Verde Sustentável
+        // Cores primárias - Verde Sustentável (Dark Mode)
         primary: {
+          deep: '#1F6F3A',
+          vivid: '#6BAF4A',
+          light: '#8BC973',
           50: '#E8F5E9',
           100: '#C8E6C9',
           200: '#A5D6A7',
@@ -20,35 +23,38 @@ module.exports = {
           800: '#2E7D32',
           900: '#1B5E20',
         },
-        // Cores secundárias - Azul Oceano
-        secondary: {
-          50: '#E3F2FD',
-          100: '#BBDEFB',
-          200: '#90CAF9',
-          300: '#64B5F6',
-          400: '#42A5F5',
-          500: '#2196F3',
-          600: '#1E88E5',
-          700: '#1976D2',
-          800: '#1565C0',
-          900: '#0D47A1',
+        // Cores de Ação - Azul Tecnológico
+        accent: {
+          blue: '#00A3E0',
+          blueLight: '#33B5E5',
+          blueDark: '#0077A3',
         },
-        // Cores de fundo
+        // Cores de fundo (Dark Mode)
         background: {
-          primary: '#F5F7F5',
-          secondary: '#FFFFFF',
-          dark: '#121212',
+          primary: '#121212',
+          secondary: '#1E1E1E',
+          tertiary: '#2A2A2A',
+          elevated: '#333333',
         },
         // Cores de superfície
         surface: {
-          card: '#FFFFFF',
-          elevated: '#F8FAF8',
+          card: '#1E1E1E',
+          modal: '#252525',
+          elevated: '#2A2A2A',
         },
-        // Cores de texto
+        // Cores de texto (Dark Mode)
         text: {
-          primary: '#1A1A1A',
-          secondary: '#6B7280',
-          muted: '#9CA3AF',
+          primary: '#F9F9F9',
+          secondary: '#B3B3B3',
+          muted: '#808080',
+          inverse: '#121212',
+        },
+        // Cores de estado
+        status: {
+          success: '#6BAF4A',
+          warning: '#F5A623',
+          error: '#E74C3C',
+          info: '#00A3E0',
         },
       },
       fontFamily: {
