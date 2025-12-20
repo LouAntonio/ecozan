@@ -123,16 +123,14 @@ export default function DiscoverScreen() {
 		},
 	];
 
-	// Experiências populares (linhas) — agora com imagem lateral
+	// Experiências populares (linhas)
 	const experiences = [
 		{ id: 1, title: 'Mergulho com Golfinhos', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800', color: '#3B82F6', description: 'Nado com golfinhos selvagens' },
 		{ id: 2, title: 'Safari Blue', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800', color: '#10B981', description: 'Aventura no oceano Índico' },
 		{ id: 3, title: 'Spice Tour', image: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800', color: '#F59E0B', description: 'Plantações de especiarias' },
-		{ id: 4, title: 'Stone Town Heritage', image: 'https://images.unsplash.com/photo-1505765053656-6bca3b0a1b3b?w=800', color: '#EC4899', description: 'História e cultura local' },
 		{ id: 5, title: 'Jozani Forest', image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800', color: '#8B5CF6', description: 'Floresta tropical e macacos' },
 		{ id: 6, title: 'Prison Island', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800', color: '#06B6D4', description: 'Tartarugas gigantes' },
 	];
-
 	// Função para filtrar itens
 	const getFilteredItems = () => {
 		if (selectedCategory === 'all') {
@@ -460,12 +458,12 @@ export default function DiscoverScreen() {
 				>
 					Atividades imperdíveis em Angola
 				</Text>
-
+				
 				{experiences.map((exp) => (
 					<TouchableOpacity
 						key={exp.id}
 						activeOpacity={0.7}
-						className="rounded-2xl p-4 mb-3 flex-row items-center"
+						className="rounded-2xl mb-3 flex-row items-center overflow-hidden"
 						style={{
 							backgroundColor: colors.surface.card,
 							borderWidth: 1.5,
@@ -477,10 +475,12 @@ export default function DiscoverScreen() {
 							elevation: 2,
 						}}
 					>
-						<View className="w-14 h-14 rounded-2xl overflow-hidden mr-4" style={{ backgroundColor: `${exp.color}15`, borderWidth: 1.5, borderColor: `${exp.color}30` }}>
-							<Image source={{ uri: exp.image }} className="w-full h-full" />
-						</View>
-						<View className="flex-1">
+						<Image 
+							source={{ uri: exp.image }} 
+							className="w-20 h-full"
+							style={{ minHeight: 80 }}
+						/>
+						<View className="flex-1 p-4">
 							<Text
 								className="text-base font-bold mb-1"
 								style={{ color: colors.text.primary }}
@@ -494,13 +494,15 @@ export default function DiscoverScreen() {
 								{exp.description}
 							</Text>
 						</View>
-						<Ionicons name="chevron-forward" size={20} color={colors.text.tertiary} />
+						<View className="pr-4">
+							<Ionicons name="chevron-forward" size={20} color={colors.text.tertiary} />
+						</View>
 					</TouchableOpacity>
 				))}
 			</View>
 
 			{/* Seção de Publicidade 2 */}
-			<View className="px-5 mb-6">
+			<View className="px-5 mb-[110px]">
 				<TouchableOpacity
 					activeOpacity={0.9}
 					className="rounded-3xl overflow-hidden"
