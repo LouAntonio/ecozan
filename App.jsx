@@ -4,6 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider, useTheme } from './src/contexts';
 import { SplashScreen } from './src/screens';
+import { OnboardingScreen } from './src/screens';
 import { TabNavigator } from './src/navigation';
 
 function MainApp() {
@@ -37,12 +38,24 @@ function MainApp() {
 
 export default function App() {
 	const [showSplash, setShowSplash] = useState(true);
+	const [showOnboarding, setShowOnboarding] = useState(false);
+
+	function handleSplashFinish() {
+		setShowOnboarding(true);
+		setShowSplash(false);
+	}
+
+	function handleOnboardingDone() {
+		setShowOnboarding(false);
+	}
 
 	return (
 		<SafeAreaProvider>
 			<ThemeProvider>
 				{showSplash ? (
-					<SplashScreen onFinish={() => setShowSplash(false)} />
+					<SplashScreen onFinish={handleSplashFinish} />
+				) : showOnboarding ? (
+					<OnboardingScreen onDone={handleOnboardingDone} />
 				) : (
 					<MainApp />
 				)}

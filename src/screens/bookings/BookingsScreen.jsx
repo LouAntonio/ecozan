@@ -252,7 +252,7 @@ export default function BookingsScreen() {
 							</View>
 
 							{selectedProvince !== 'all' && (
-								<>
+								<View>
 									<Text className="text-sm font-semibold mb-2" style={{ color: colors.text.secondary }}>Município</Text>
 									<View className="flex-row flex-wrap mb-3">
 										{(provinces.find(p => p.id === selectedProvince)?.municipalities || []).map((municipality, index) => {
@@ -265,7 +265,7 @@ export default function BookingsScreen() {
 											);
 										})}
 									</View>
-								</>
+								</View>
 							)}
 
 							<Text className="text-sm font-semibold mb-2" style={{ color: colors.text.secondary }}>Faixa de Preço</Text>
